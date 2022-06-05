@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="js/bootstrap.css"/>
+		<style type="text/css">
+			button{
+				width: 100px;
+				margin:10px 5px;
+			}
+		</style>
+	</head>
+	<body style="background: url(images/zh.jpg) no-repeat;">
+		<div style="width: 800px; margin: 50px auto;">
+			<div>
+				<video id="zh" src="images/洪真英 - 산다는 건.mkv" controls width="800px"></video>
+			</div>
+			<div style="padding:0 70px; margin: 0 auto;">
+				<button type="button" id="start" class="btn btn-info">播放</button>
+				<button type="button" id="stop" class="btn btn-info">暂停</button>
+				<button type="button" id="kuaij" class="btn btn-info">快进10秒</button>
+				<button type="button" id="hout" class="btn btn-info">后退10秒</button>
+				<button type="button" id="jias" class="btn btn-info">加速</button>
+				<button type="button" id="jians" class="btn btn-info">减速</button>
+				<button type="button" id="up" class="btn btn-info">音量+</button>
+				<button type="button" id="down" class="btn btn-info">音量-</button>
+				<button type="button" id="jingy" class="btn btn-info">静音</button>
+				<button type="button" id="qxjingy" class="btn btn-info">取消静音</button>
+				
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			$(function(){  
+				var video = document.getElementById('zh');
+				$("#start").click(function (){
+					video.play();
+				})
+				$("#stop").click(function (){
+					video.pause();
+				})
+				$("#kuaij").click(function (){
+					
+					video.currentTime += 10;
+				})
+				$("#hout").click(function (){
+					
+					video.currentTime += -10;
+				})
+				$("#jias").click(function (){
+					
+					video.playbackRate += 0.25;
+				})
+				$("#jians").click(function (){
+					
+					video.playbackRate += -0.25;
+				})
+				$("#up").click(function (){
+					
+					video.volume +=0.1;
+				})
+				$("#down").click(function (){
+					
+					video.volume += -0.1;
+				})
+				$("#jingy").click(function (){
+					video.muted = true;
+				})
+				$("#qxjingy").click(function (){
+					video.muted = false;
+				})
+			})    
+		</script>
+	</body>
+</html>
